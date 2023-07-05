@@ -17,6 +17,7 @@
 		3C832C7D2A54734200D63D97 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C832C7C2A54734200D63D97 /* Hero.swift */; };
 		3C832C802A547DB700D63D97 /* HeroViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C832C7F2A547DB700D63D97 /* HeroViewCell.swift */; };
 		3C832C822A54942F00D63D97 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C832C812A54942F00D63D97 /* ImageCacheManager.swift */; };
+		3C832C842A556D0400D63D97 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C832C832A556D0400D63D97 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3C832C7C2A54734200D63D97 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		3C832C7F2A547DB700D63D97 /* HeroViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewCell.swift; sourceTree = "<group>"; };
 		3C832C812A54942F00D63D97 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		3C832C832A556D0400D63D97 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				3C832C642A54721900D63D97 /* ListViewController.swift */,
+				3C832C832A556D0400D63D97 /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				3C832C7D2A54734200D63D97 /* Hero.swift in Sources */,
 				3C832C822A54942F00D63D97 /* ImageCacheManager.swift in Sources */,
 				3C832C7B2A54733800D63D97 /* NetworkManager.swift in Sources */,
+				3C832C842A556D0400D63D97 /* DetailsViewController.swift in Sources */,
 				3C832C652A54721900D63D97 /* ListViewController.swift in Sources */,
 				3C832C612A54721900D63D97 /* AppDelegate.swift in Sources */,
 				3C832C802A547DB700D63D97 /* HeroViewCell.swift in Sources */,
