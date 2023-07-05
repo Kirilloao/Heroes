@@ -73,55 +73,48 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Heroes" id="IlQ-VL-Hcn"/>
                     <connections>
-                        <segue destination="9AG-Oh-q46" kind="show" id="a5J-13-0wL"/>
+                        <segue destination="9AG-Oh-q46" kind="show" identifier="showDetailsVC" id="a5J-13-0wL"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3G-7J-gUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="938.16793893129773" y="-44.366197183098592"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="2PP-RQ-hQI">
             <objects>
-                <viewController id="9AG-Oh-q46" sceneMemberID="viewController">
+                <viewController id="9AG-Oh-q46" customClass="DetailsViewController" customModule="HeroesApiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IdE-1D-0qc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ihi-5A-gLd">
-                                <rect key="frame" x="16" y="20" width="216" height="238"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ihi-5A-gLd">
+                                <rect key="frame" x="16" y="20" width="190" height="250"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qM0-0N-6dm">
-                                <rect key="frame" x="250" y="111" width="127" height="56"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x61-qf-gAn">
-                                        <rect key="frame" x="0.0" y="0.0" width="127" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o60-wX-knk">
-                                        <rect key="frame" x="0.0" y="32" width="127" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="x61-qf-gAn">
+                                <rect key="frame" x="247" y="134" width="130" height="22"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B8P-4h-efs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="x61-qf-gAn" firstAttribute="centerY" secondItem="Ihi-5A-gLd" secondAttribute="centerY" id="5jj-Qv-PbX"/>
                             <constraint firstItem="Ihi-5A-gLd" firstAttribute="leading" secondItem="B8P-4h-efs" secondAttribute="leading" constant="16" id="6RI-HM-8J6"/>
-                            <constraint firstItem="Ihi-5A-gLd" firstAttribute="height" secondItem="IdE-1D-0qc" secondAttribute="height" multiplier="0.317757" id="QVi-fE-hwL"/>
+                            <constraint firstItem="Ihi-5A-gLd" firstAttribute="height" secondItem="IdE-1D-0qc" secondAttribute="height" multiplier="0.317757" constant="12.000000000000028" id="QVi-fE-hwL"/>
                             <constraint firstItem="Ihi-5A-gLd" firstAttribute="top" secondItem="B8P-4h-efs" secondAttribute="top" constant="20" id="T8j-Rz-ONn"/>
-                            <constraint firstItem="Ihi-5A-gLd" firstAttribute="width" secondItem="IdE-1D-0qc" secondAttribute="width" multiplier="0.549618" id="eNu-0r-XN5"/>
-                            <constraint firstItem="qM0-0N-6dm" firstAttribute="leading" secondItem="Ihi-5A-gLd" secondAttribute="trailing" constant="18" id="l8U-9g-7db"/>
-                            <constraint firstItem="qM0-0N-6dm" firstAttribute="top" secondItem="Ihi-5A-gLd" secondAttribute="bottom" constant="-147" id="oiU-Uh-cZS"/>
-                            <constraint firstItem="B8P-4h-efs" firstAttribute="trailing" secondItem="qM0-0N-6dm" secondAttribute="trailing" constant="16" id="xfG-JM-hs5"/>
+                            <constraint firstItem="B8P-4h-efs" firstAttribute="trailing" secondItem="x61-qf-gAn" secondAttribute="trailing" constant="16" id="bAS-Nj-shh"/>
+                            <constraint firstItem="Ihi-5A-gLd" firstAttribute="width" secondItem="IdE-1D-0qc" secondAttribute="width" multiplier="0.549618" constant="-25.877862595419856" id="eNu-0r-XN5"/>
+                            <constraint firstItem="x61-qf-gAn" firstAttribute="leading" secondItem="Ihi-5A-gLd" secondAttribute="trailing" constant="41" id="eru-ah-lt3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WhJ-yN-UTt"/>
+                    <connections>
+                        <outlet property="heroImageView" destination="Ihi-5A-gLd" id="uwH-aZ-7bc"/>
+                        <outlet property="heroNameLabel" destination="x61-qf-gAn" id="WAp-yR-yrO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAf-Pr-EOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,9 +144,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

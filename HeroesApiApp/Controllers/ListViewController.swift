@@ -19,6 +19,13 @@ final class ListViewController: UICollectionViewController {
         fetchHeroes(from: Links.heroesApi.rawValue)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailsViewController else { return }
+        
+        detailVC.hero = sender as? Hero
+        
+    }
+    
     // MARK: - Networking
     private func fetchHeroes(from url: String) {
         NetworkManager.shared.fetchHeroes(from: Links.heroesApi.rawValue) { [weak self] result in
@@ -34,7 +41,7 @@ final class ListViewController: UICollectionViewController {
     }
 }
 
-// MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension ListViewController {
      
     // numberOfItemsInSection
@@ -51,6 +58,15 @@ extension ListViewController {
         cell.configure(with: hero)
     
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension ListViewController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedHero = heroes[indexPath.row]
+        
+        performSegue(withIdentifier: "showDetailsVC", sender: selectedHero)
     }
 }
 
