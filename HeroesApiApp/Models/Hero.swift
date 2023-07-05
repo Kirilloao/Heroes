@@ -70,3 +70,4 @@ struct Images: Decodable {
     var md: String
     var lg: String
 }
+
