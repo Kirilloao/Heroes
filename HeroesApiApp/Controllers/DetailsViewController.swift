@@ -10,43 +10,49 @@ import UIKit
 final class DetailsViewController: UIViewController {
     
     // MARK: - IB Outlets
+    @IBOutlet var heroNameLabel: UILabel!
+    @IBOutlet var powerstatsButton: UIButton!
+    @IBOutlet var appearanceButton: UIButton!
+    @IBOutlet var BiographyButton: UIButton!
+    
     @IBOutlet var heroImageView: UIImageView! {
         didSet {
             heroImageView.layer.cornerRadius = 10
         }
     }
     
-    @IBOutlet var heroNameLabel: UILabel!
-    
-    @IBOutlet var powerstatsButton: UIButton!
-    @IBOutlet var appearanceButton: UIButton!
-    @IBOutlet var BiographyButton: UIButton!
-    
     // MARK: - Public Properties
     var hero: Hero!
-
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI(from: hero)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationVC = segue.destination as? UINavigationController else { return }
+        guard let infoVC =  navigationVC.viewControllers.first as? InfoViewController else { return }
         
-        let dictionart = createDictionary(from: hero.connections)
-        print(dictionart)
+        infoVC.info = sender as? String
+        
     }
     
     // MARK: - IB Actions
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let infoVC = segue.destination as? InfoViewController else { return }
-        
-        
-    }
-    
     @IBAction func showInfoVC(_ sender: UIButton) {
-        performSegue(withIdentifier: "showInfoVC", sender: nil)
+        if sender.tag == 0 {
+            performSegue(withIdentifier: "showInfoVC", sender: hero.powerstats.description)
+            
+        } else if sender.tag == 1 {
+            performSegue(withIdentifier: "showInfoVC", sender: hero.appearance.description)
+            
+        } else {
+            performSegue(withIdentifier: "showInfoVC", sender: hero.biography.description)
+            
+        }
     }
-    
     
     // MARK: - Private Methods
     private func setupUI(from hero: Hero) {
@@ -64,19 +70,6 @@ final class DetailsViewController: UIViewController {
             }
         }
     }
-    
-    private func createDictionary<T>(from powerstats: T) -> [String: Any] {
-          var dictionary: [String: Any] = [:]
-
-          let mirror = Mirror(reflecting: powerstats)
-          for child in mirror.children {
-              if let propertyName = child.label {
-                  dictionary[propertyName] = child.value
-              }
-          }
-
-          return dictionary
-      }
 }
 
 

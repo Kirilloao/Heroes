@@ -28,6 +28,17 @@ struct Powerstats: Decodable {
     var durability: Int
     var power: Int
     var combat: Int
+    
+    var description: String {
+        """
+        Intelligence: \(intelligence)
+        Strength: \(strength)
+        Speed: \(speed)
+        Durability: \(durability)
+        Power: \(power)
+        Combat: \(combat)
+        """
+    }
 }
 
 // MARK: - Appearance
@@ -38,6 +49,17 @@ struct Appearance: Decodable {
     var weight: [String]
     var eyeColor: String
     var hairColor: String
+    
+    var description: String {
+        """
+        Gender: \(gender)
+        Race: \(race ?? "unknown")
+        Height: \(height)
+        Weight: \(weight)
+        EyeColor: \(eyeColor)
+        HairColor: \(hairColor)
+        """
+    }
 }
 
 // MARK: - Biography
@@ -49,6 +71,18 @@ struct Biography: Decodable {
     var firstAppearance: String
     var publisher: String?
     var alignment: String
+    
+    var description: String {
+        """
+        FullName: \(fullName)
+        AlterEgos: \(alterEgos)
+        Aliases: \(aliases)
+        PlaceOfBirth: \(placeOfBirth)
+        FirstAppearance: \(firstAppearance)
+        Publisher: \(publisher ?? "unknown")
+        Alignment: \(alignment)
+        """
+    }
 }
 
 // MARK: - Work

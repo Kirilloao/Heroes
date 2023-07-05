@@ -7,32 +7,19 @@
 
 import UIKit
 
-final class InfoViewController: UITableViewController {
+final class InfoViewController: UIViewController {
+
+    // MARK: - IB Outlets
+    @IBOutlet var infoLabel: UILabel!
     
+    // MARK: - Public Properties
     
-     
+    var info: String!
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        infoLabel.text = info
     }
-}
-
-// MARK: - UITableViewDataSource
-extension InfoViewController {
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
-        
-        
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-extension InfoViewController {
-    
 }
