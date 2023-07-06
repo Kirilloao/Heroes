@@ -13,7 +13,6 @@ final class InfoViewController: UIViewController {
     @IBOutlet var infoLabel: UILabel!
     
     // MARK: - Public Properties
-    
     var info: String!
     
     // MARK: - Life Cycle Methods

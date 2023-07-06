@@ -181,33 +181,34 @@
                         <outlet property="heroImageView" destination="Ihi-5A-gLd" id="uwH-aZ-7bc"/>
                         <outlet property="heroNameLabel" destination="x61-qf-gAn" id="WAp-yR-yrO"/>
                         <outlet property="powerstatsButton" destination="T2L-Um-jMC" id="7k8-8o-9FH"/>
-                        <segue destination="NcP-Ok-tAa" kind="presentation" identifier="showInfoVC" id="Eyj-n1-dy8"/>
+                        <segue destination="EE1-Yb-PrM" kind="show" identifier="showInfoVC" id="SXV-3I-eth"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAf-Pr-EOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1739.6946564885495" y="-44.366197183098592"/>
+            <point key="canvasLocation" x="1834" y="-37"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="8LD-j6-hV8">
             <objects>
                 <viewController id="EE1-Yb-PrM" customClass="InfoViewController" customModule="HeroesApiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sqO-HW-CKs">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSO-aV-Qep">
-                                <rect key="frame" x="16" y="154" width="361" height="618"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="50" width="361" height="384.33333333333331"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="28"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lsg-XY-sOP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="oSO-aV-Qep" firstAttribute="top" secondItem="Lsg-XY-sOP" secondAttribute="top" constant="98" id="hM2-NN-bbx"/>
-                            <constraint firstItem="Lsg-XY-sOP" firstAttribute="bottom" secondItem="oSO-aV-Qep" secondAttribute="bottom" constant="70" id="lgQ-N1-z2c"/>
+                            <constraint firstItem="oSO-aV-Qep" firstAttribute="top" secondItem="Lsg-XY-sOP" secondAttribute="top" constant="50" id="hM2-NN-bbx"/>
+                            <constraint firstItem="oSO-aV-Qep" firstAttribute="height" secondItem="sqO-HW-CKs" secondAttribute="height" multiplier="0.513064" id="ovB-GO-g32"/>
                             <constraint firstItem="oSO-aV-Qep" firstAttribute="leading" secondItem="Lsg-XY-sOP" secondAttribute="leading" constant="16" id="p2l-Zl-Umo"/>
                             <constraint firstItem="Lsg-XY-sOP" firstAttribute="trailing" secondItem="oSO-aV-Qep" secondAttribute="trailing" constant="16" id="rA3-Z1-yul"/>
                         </constraints>
@@ -219,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9B-lh-geF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3449.6183206106871" y="-44.366197183098592"/>
+            <point key="canvasLocation" x="2573" y="-37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="umJ-p7-wgJ">
@@ -243,28 +244,10 @@
             </objects>
             <point key="canvasLocation" x="11.450381679389313" y="-44.366197183098592"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="o3M-fL-N74">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NcP-Ok-tAa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kxo-KY-fiJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EE1-Yb-PrM" kind="relationship" relationship="rootViewController" id="Kc6-7F-SGs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="opN-1Q-WnG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2522.9007633587785" y="-44.366197183098592"/>
-        </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

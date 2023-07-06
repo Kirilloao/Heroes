@@ -19,6 +19,7 @@ final class ListViewController: UICollectionViewController {
         fetchHeroes(from: Links.heroesApi.rawValue)
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? DetailsViewController else { return }
         
@@ -43,7 +44,7 @@ final class ListViewController: UICollectionViewController {
 
 // MARK: - UICollectionViewDataSource
 extension ListViewController {
-     
+    
     // numberOfItemsInSection
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         heroes.count
@@ -56,7 +57,7 @@ extension ListViewController {
         let hero = heroes[indexPath.item]
         
         cell.configure(with: hero)
-    
+        
         return cell
     }
 }

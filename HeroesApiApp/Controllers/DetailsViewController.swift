@@ -33,11 +33,10 @@ final class DetailsViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navigationVC = segue.destination as? UINavigationController else { return }
-        guard let infoVC =  navigationVC.viewControllers.first as? InfoViewController else { return }
+        guard let infoVC =  segue.destination as? InfoViewController else { return }
         
         infoVC.info = sender as? String
-        
+
     }
     
     // MARK: - IB Actions
