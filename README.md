@@ -1,4 +1,4 @@
-# HeroesApiApp
+# Heroes
 
 Foundation, UIKit,MVC, URLSession, Parsing JSON, API, NSCache, Storyboard
 
